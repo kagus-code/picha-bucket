@@ -1,4 +1,12 @@
 asgiref==3.3.4
+autopep8==1.5.7
+beautifulsoup4==4.9.3
 Django==3.2.3
+django-bootstrap4==3.0.1
+fontawesome==5.10.1.post1
+fontawesome-free==5.15.3
+pycodestyle==2.7.0
 pytz==2021.1
+soupsieve==2.2.1
 sqlparse==0.4.1
+toml==0.10.2

@@ -2,6 +2,23 @@
 {% load static%}
 
 
+<!DOCTYPE html>
+<html lang="en">
+<head>
+
+
+  {% block styles %}
+       {% bootstrap_css %}
+       <link rel="stylesheet" href="{% static 'css/main.css'   %}">
+
+   {% endblock %}
+
+</head>
+<body>
+  
+</body>
+</html>
+
 <nav class="navbar navbar-expand-lg navbar-light" id="navMain">
         <div class="container navigation header_right wow fadeInLeft animated animated" data-wow-delay=".5s" style="visibility: visible; animation-delay: 0.5s; animation-name: fadeInLeft;">
               <a class="navbar-brand" href="/"><img src="{% static 'images/logo3 gallery.png'   %}" class="" style="width:70px"> Picha-Bucket</a>
