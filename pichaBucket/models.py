@@ -43,6 +43,54 @@ class Location(models.Model):
         return self.name  
 
 
+
+class Image(models.Model):
+  image= models.ImageField(upload_to = 'gallery/')
+  image_name = models.CharField(max_length=50)
+  image_description= models.TextField()
+  pub_date = models.DateTimeField(auto_now_add=True)
+  location = models.ForeignKey(Location, on_delete=models.CASCADE)
+  category = models.ManyToManyField(Category)
+
+
+
+
+  def save_image(self):
+    self.save()
+
+  def delete_image(self, name):
+     self.objects.filter(image_name=name).delete()
+
+  @classmethod
+  def update_image(cls,name,new_name):
+    update = Image.objects.filter(image_name=name).update(name=new_name)
+    return update
+
+  @classmethod   
+  def get_image(cls,id):
+    image = Image.objects.get(pk=id)
+
+    return image
+
+  @classmethod
+  def search_by_category(cls,search_term):
+        images = cls.objects.filter(category__icontains=search_term)
+        return images  
+
+  @classmethod
+  def  get_image_by_location(cls,location):
+    image = Image.objects.filter(location=location)
+
+    return image
+
+
+
+
+
+  def __str__(self):
+        return self.image_name
+
+
     
 
 
