@@ -22,6 +22,27 @@ class Category(models.Model):
         return self.name  
 
 
+class Location(models.Model):
+  name = models.CharField(max_length=50)
+
+
+  def save_location(self):
+        self.save()
+
+  def delete_location(self, name):
+     self.objects.filter(name=name).delete()       
+
+
+  @classmethod
+  def update_location(cls,name,new_name):
+    update = Location.objects.filter(name=name).update(name=new_name)
+    return update    
+
+
+  def __str__(self):
+        return self.name  
+
+
     
 
 
