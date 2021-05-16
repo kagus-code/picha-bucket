@@ -96,41 +96,7 @@ gallery style */
   border-radius: 2px ;
 
 }
-.main .gallery .img:first-child{
-  grid-column-start: span 2;
-  grid-row-start: span 2;
 
-}
-
-.main .gallery .img:nth-child(2n+3){
-  grid-row-start: span 1;
-
-}
-.main .gallery .img:nth-child(4n+5){
-  grid-column-start: span 2;
-  grid-row-start: span 2;
-
-}
-
-.main .gallery .img:nth-child(6n+7){
-  grid-row-start: span 1;
-
-}
-.main .gallery .img:nth-child(8n+9){
-  grid-column-start: span 1;
-  grid-row-start: span 1;
-
-}
-
-.main .gallery .img img{
-filter: brightness(0.5) grayscale(100);
-transition: 0.3s ease-in-out;
-}
-
-.main .gallery .img img:hover {
-  filter: brightness(1) grayscale(0);
-
-}
 
 /* 
 gallery style */

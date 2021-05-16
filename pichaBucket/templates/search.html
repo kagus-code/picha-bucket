@@ -8,7 +8,7 @@
 
 {% block styles %}
 {% bootstrap_css %}
-<link rel="stylesheet" href="{% static 'css/landing.css'   %}">
+<link rel="stylesheet" href="{% static 'css/search.css'   %}">
 {% endblock %}
 
 
@@ -35,6 +35,24 @@
 
 
 
+<div class="main">
+  <div class="gallery">
+    {% for image in images %}
+    <div class="img">
+      <img src="{{image.image.url}}" alt="image"  class="img-fluid">
+      <div class="name" style="color: black;">
+        <h4>{{image.name}}</h4>
+      </div>
+    </div>
+
+    {% empty %}
+    <div class="row">
+      <h2 class="text-center">There Are No Images for this category yet</h2>
+    </div>
+    {% endfor %}
+    
+  </div>
+</div>
 
 
 
