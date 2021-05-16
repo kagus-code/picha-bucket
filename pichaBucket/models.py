@@ -45,7 +45,7 @@ class Location(models.Model):
 
 
 class Image(models.Model):
-  image= models.ImageField(upload_to = 'gallery/')
+  image= models.ImageField(upload_to = 'gallery/', null=True)
   image_name = models.CharField(max_length=50)
   image_description= models.TextField()
   pub_date = models.DateTimeField(auto_now_add=True)

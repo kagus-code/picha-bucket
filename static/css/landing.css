@@ -61,3 +61,30 @@ html, body {
   opacity: .6;
 
 }
+
+.main{
+  position: relative;
+  height: 100vh;
+  width: 100%;
+}
+
+.main .gallery{
+  position: relative;
+  height: auto;
+  width: 90%;
+  margin: auto;
+  padding: 45px 0;
+  display: grid;
+  grid-template-columns: auto auto auto auto;
+  grid-gap: 2vmin;
+  grid-auto-flow: dense;
+
+}
+
+.main .gallery .img{
+  position: relative;
+  height: 100%;
+  width: 100%;
+  overflow: hidden;
+
+}

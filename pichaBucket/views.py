@@ -2,12 +2,17 @@ from django.core.checks import messages
 from django.shortcuts import render,redirect
 from django.http  import HttpResponse,Http404
 import datetime as dt
-from .models import Image
+from .models import Image, Location
 
 # Create your views here.
 
 def landing (request):
-  return render (request,'index.html')
+  images= Image.objects.all()
+  location = Location.objects.all()
+  title = 'Picha-Bucket'
+
+
+  return render (request,'index.html',  {'title':title, 'images':images, 'location':location})
 
 
 

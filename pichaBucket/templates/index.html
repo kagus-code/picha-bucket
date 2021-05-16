@@ -40,6 +40,22 @@
 
 
 
+<div class="main">
+  <div class="gallery">
+    {% for image in images %}
+    <div class="img">
+      <img src="{{image.image.url}}" alt="image"  class="img-fluid">
+    </div>
+
+    {% empty %}
+    <div class="row">
+      <h2 class="text-center">There Are No Images</h2>
+    </div>
+    {% endfor %}
+    
+  </div>
+</div>
+
 
 
 
