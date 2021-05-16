@@ -4,11 +4,37 @@
 {% load static%}
 
 
+
+
+{% block styles %}
+{% bootstrap_css %}
+<link rel="stylesheet" href="{% static 'css/landing.css'   %}">
+{% endblock %}
+
+
 {% block content %}
 {{block.super}}
 
+<div class="main-image">
+  <div class="inner">
+    <h1><span>SEARCH HERE</span></h1>
+    <span class="cen">The most Amazing Photographs</span>
+    <a class="button" href="#">Click here </a>
+  </div>
+</div>
+
+
+
+
+
+
+
+
+
+
+
  <!--image slides section-->
- <div>
+ <!-- <div>
   <div class="row">
     <div class="col-lg-12">
       <div id="slides" class="carousel slide" data-ride="carousel">
@@ -19,11 +45,11 @@
         </ul>
         <div class="carousel-inner">
           <div class="carousel-item active">
-            <img src="{% static 'images/top1.jpg' %}" alt="background image" class="img-fluid"  />
-            <div class="carousel-caption">
+            <img src="{% static 'images/top2.jpg' %}" alt="background image" class="img-fluid"  />
+            <div class="carousel-caption ">
               <h3>For The Gram</h3>
               <br />
-              <a href="#column-section">
+              <a href="#">
                 <button type="button" class="btn btn-primary btn-lg">
                   Photography
                 </button>
@@ -31,10 +57,10 @@
             </div>
           </div>
           <div class="carousel-item">
-            <img src="{% static 'images/top2.jpg'   %}" alt="background image2" class="img-fluid" />
+            <img src="{% static 'images/top3.jpg'   %}" alt="background image2" class="img-fluid" />
           </div>
           <div class="carousel-item">
-            <img src="{% static 'images/top3.jpg'   %}" alt="background image3" class="img-fluid" />
+            <img src="{% static 'images/top1.jpg'   %}" alt="background image3" class="img-fluid" />
             <div class="carousel-caption" id="african-caption">
               <h1>Amazing Pictures</h1>
             </div>
@@ -43,7 +69,7 @@
       </div>
     </div>
   </div>
-</div>
+</div> -->
 
 
 
