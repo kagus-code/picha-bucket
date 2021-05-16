@@ -49,8 +49,8 @@ class Image(models.Model):
   image_name = models.CharField(max_length=50)
   image_description= models.TextField()
   pub_date = models.DateTimeField(auto_now_add=True)
-  location = models.ForeignKey(Location, on_delete=models.CASCADE)
-  category = models.ManyToManyField(Category)
+  location = models.ForeignKey('Location', on_delete=models.CASCADE)
+  category = models.ManyToManyField('Category')
 
 
 
@@ -74,7 +74,7 @@ class Image(models.Model):
 
   @classmethod
   def search_by_category(cls,search_term):
-        images = cls.objects.filter(category__icontains=search_term)
+        images = cls.objects.filter(category__name__icontains=search_term)
         return images  
 
   @classmethod

@@ -29,6 +29,12 @@ html, body {
   font-size: 70px;
 }
 
+.inner h2{
+  margin: 0;
+  font-size: 20px;
+  color: white;
+}
+
 .inner h1 span{
   border: 6px solid white;
   padding: 6px 14px;display: inline-block;

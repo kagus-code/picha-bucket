@@ -1,0 +1,54 @@
+{%extends 'base.html'%}
+
+{% load bootstrap4 %}
+{% load static%}
+
+
+
+
+{% block styles %}
+{% bootstrap_css %}
+<link rel="stylesheet" href="{% static 'css/landing.css'   %}">
+{% endblock %}
+
+
+{% block content %}
+{{block.super}}
+
+<div class="main-image">
+  <div class="inner">
+
+    
+      {% if images%}
+        <h2>Found {{ images|length }} images of {{message}}</h2>
+      {% else %}
+        <h2> Found 0 images of {{message}}</h2>
+      {% endif %}
+  
+<div class="cen">
+
+</div>
+
+    <a class="button" href="/">Home Page</a>
+  </div>
+</div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+{% endblock %}
