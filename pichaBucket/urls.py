@@ -9,6 +9,7 @@ from . import views
 urlpatterns = [
 
   re_path(r'^$', views.landing,name='landingPage'),
+  re_path(r'^search/', views.search_results, name='search_results'),
 
 
 
