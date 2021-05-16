@@ -28,3 +28,17 @@ def search_results(request):
     message = "You havent searched for any category"
 
     return render(request, 'search.html', {"message":message})
+
+
+def location_image(request,location_id):
+  all_locations = Location.objects.all()
+  location = Location.get_location_id(location_id)
+  images = Image.get_image_by_location(location_id)
+  place = {location} 
+  message =f"{location}"
+  return render(request, 'location.html', { 'location':place,'images':images,"message":message,})
+  
+
+
+
+

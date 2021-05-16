@@ -11,7 +11,7 @@
 <!---Navigation -->
 <nav id="nav-main" class="navbar navbar-expand-md navbar-light bg-light sticky-top">
   <div class="container-fluid " >
-    <a id="logo" class="logo" href="./">
+    <a id="logo" class="logo" href="/">
       
       
       <img src="{% static 'images/logo3 gallery.png'   %}"  alt="logo" style="width:50px">
@@ -28,7 +28,10 @@
   
         {% for place in location %}
 
-        <li><a href="#"></a> {{place.name}}</li>
+        <li><a href="{% url 'location_image' location_id=place.id %}">
+        
+          {{place.name}}
+        </a> </li>
         {% empty %}
         <li><a href="#"></a> No locations </li>
         {% endfor %}

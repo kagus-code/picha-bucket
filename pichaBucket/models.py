@@ -38,6 +38,11 @@ class Location(models.Model):
     update = Location.objects.filter(name=name).update(name=new_name)
     return update    
 
+  @classmethod
+  def get_location_id(cls, id):
+        locate = Location.objects.get(pk = id)
+        return locate  
+
 
   def __str__(self):
         return self.name  
@@ -82,9 +87,9 @@ class Image(models.Model):
 
   @classmethod
   def  get_image_by_location(cls,location):
-    image = Image.objects.filter(location=location)
+    images = Image.objects.filter(location__id=location)
 
-    return image
+    return images
 
 
 
