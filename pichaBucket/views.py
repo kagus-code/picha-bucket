@@ -17,12 +17,13 @@ def landing (request):
 
 
 def search_results(request):
+  location = Location.objects.all()
   if 'category' in request.GET and  request.GET["category"]:
     search_term = request.GET.get("category")
     searched_images = Image.search_by_category(search_term)
     message =f"{search_term}"
 
-    return render(request, 'search.html', {"message":message, "images":searched_images})
+    return render(request, 'search.html', {"message":message, "images":searched_images,'location':location})
 
   else:
     message = "You havent searched for any category"
@@ -34,9 +35,10 @@ def location_image(request,location_id):
   all_locations = Location.objects.all()
   location = Location.get_location_id(location_id)
   images = Image.get_image_by_location(location_id)
+  places = Location.objects.all()
   place = {location} 
   message =f"{location}"
-  return render(request, 'location.html', { 'location':place,'images':images,"message":message,})
+  return render(request, 'location.html', { 'location':places,'images':images,"message":message,})
   
 
 

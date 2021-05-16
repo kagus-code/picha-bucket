@@ -39,7 +39,7 @@
   <div class="gallery">
     {% for image in images %}
     <div class="img">
-      <img src="{{image.image.url}}" alt="image"  class="img-fluid">
+      <img  src="{{image.image.url}}"  data-toggle="modal" data-target="#myModal{{image.id}}" alt="image"  class="img-fluid">
     </div>
 
     {% empty %}
@@ -57,9 +57,40 @@
 
 
 
+{% for image in images %}
+
+<div class="modal fade" id="myModal{{image.id}}" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+  <div class="modal-dialog modal-lg" role="document">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title" id="#{{image.name}}">{{image.image_name}}</h5>
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+      <div>
+        <img src="{{image.image.url}}" class="img-fluid" alt="{{image.name}}"/>
+      </div>
+      <div class="modal-body">{{image.image_description}}</div>
+      <div class="modal-body">Published: {{image.pub_date}}</div>
+      <div class="modal-body">Location:{{image.location}}</div>
+      <div class="modal-footer">
+
+        <button type="button" class="btn btn-info" value="{{image.image.url}}" onclick="copyURL(this.value)">Copy URL</button>
+        <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+      </div>
+    </div>
+  </div>
+</div>
 
 
 
+{% empty %}
+  <div class="row">
+    <h2 class="text-center">There Are No Images</h2>
+  </div>
+
+{% endfor %}
 
 
 
