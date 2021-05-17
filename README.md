@@ -55,6 +55,7 @@ Create .env file and paste paste the following and fill  required fields:
 
 ## link to live site on GitHub Pages
 
+https://pichabucket.herokuapp.com/
 
 
 ## Support and contact details
