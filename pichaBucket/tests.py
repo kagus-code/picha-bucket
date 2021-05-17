@@ -74,3 +74,72 @@ class CategoryTestClass(TestCase):
     def tearDown(self):
         Category.objects.all().delete()   
 
+
+
+
+
+class ImageTestClass(TestCase):
+
+    def setUp(self):
+        # Creating a new Location and saving it
+    
+        self.location = Location(
+            name='Africa', )
+
+        # Creating a new Category and saving it
+        self.category = Category(
+            name='nature', )
+
+        self.new_image = Image(image ='gallery/',
+            image_name='Machu pichu', image_description='This is a random test description', location=self.location)
+            
+     # Testing  instance
+    def test_instance(self):
+        self.assertTrue(isinstance(self.new_image, Image))
+
+    
+    #Testing save method 
+    def test_save_method(self):
+        self.location.save()
+        self.category.save()
+        self.new_image.save_image()
+
+        images = Image.objects.all()
+        self.assertTrue(len(images) > 0)       
+
+    def test_delete_method(self):
+        self.location.save()
+        self.category.save()
+        self.new_image.save_image()
+        Image.delete_image(Image, name='Machu pichu')
+        images = Image.objects.all()
+        self.assertTrue(len(images) == 0)     
+
+    def test_update_image(self):
+        self.location.save()
+        self.category.save()
+        self.new_image.save_image()
+        Image.update_image(name='Machu pichu', new_name='maldives')
+        self.assertTrue(Image.objects.get(image_name='maldives'))  
+
+    def test_get_image(self):
+        self.location.save()
+        self.category.save()
+        self.new_image.save_image()  
+
+        images = Image.get_image(id=self.new_image.id)
+        self.assertEqual(images,self.new_image)      
+    
+
+
+
+
+
+
+
+    def tearDown(self):
+        Location.objects.all().delete()  
+        Category.objects.all().delete()   
+        Image.objects.all().delete()
+
+

@@ -71,7 +71,7 @@ class Image(models.Model):
 
   @classmethod
   def update_image(cls,name,new_name):
-    update = Image.objects.filter(image_name=name).update(name=new_name)
+    update = Image.objects.filter(image_name=name).update(image_name=new_name)
     return update
 
   @classmethod   
