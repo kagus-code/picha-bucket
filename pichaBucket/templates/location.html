@@ -28,13 +28,9 @@
 <div class="cen">
 
 </div>
-
     <a class="button" href="/">Home Page</a>
   </div>
 </div>
-
-
-
 <div class="main">
   <div class="gallery">
     {% for image in images %}
@@ -50,12 +46,6 @@
     
   </div>
 </div>
-
-
-
-
-
-
 
 {% for image in images %}
 
@@ -76,14 +66,12 @@
       <div class="modal-body">Location:{{image.location}}</div>
       <div class="modal-footer">
 
-        <button type="button" class="btn btn-info" value="{{image.image.url}}" onclick="copyURL(this.value)">Copy URL</button>
+        <button type="button" class="btn btn-info" value="https://pichabucket.herokuapp.com{{image.image.url}}" onclick="copyURL(this.value)">Copy URL</button>
         <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
       </div>
     </div>
   </div>
 </div>
-
-
 
 {% empty %}
   <div class="row">
@@ -91,8 +79,6 @@
   </div>
 
 {% endfor %}
-
-
 
 
 
