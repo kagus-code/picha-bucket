@@ -9,6 +9,7 @@
 {% block styles %}
 {% bootstrap_css %}
 <link rel="stylesheet" href="{% static 'css/landing.css'   %}">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
 {% endblock %}
 
 
@@ -30,8 +31,11 @@
 
   <form class="form" role="search" action="{% url 'search_results' %}">
     <div class="input-group">
-      <input type="text" class="form-control" placeholder=" Search images by category" name="category" style="opacity: 0.5; color: black;">  
-       
+      <input type="text" class="form-control" placeholder=" Search images by category" name="category" style="opacity: 0.5; color: black;"
+      required>  
+      <div class="input-group-btn">
+        <button class="btn btn-default" type="submit"><i class="fa fa-search"></i></button>
+      </div>
     </div>
     
   </form>
